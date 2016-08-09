@@ -1,0 +1,118 @@
+@accent: #FF4500;
+
+.slider {
+	overflow: hidden;
+	position: relative;
+}
+.slide {
+	position: absolute;
+	top: 0;
+	left: 100%;
+	transition: left 1.2s ease-in-out;
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+	h2 {
+		position: absolute;
+		bottom: 10%;
+		left: 10%;
+		font-size: 2.3rem;
+		color: #fff;
+	}
+}
+.nav__btns {
+	position: absolute;
+	top: 50%;
+	left: 3%;
+	right: 3%;
+	transform: translateY(-50%);
+}
+.nav__btn {
+	position: relative;
+    display: block;
+    width: 60px;
+    height: 60px;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+	&:hover {
+		border-color: @accent;
+		&::after {
+			border-left-color: @accent;
+			border-top-color: @accent;
+		}
+	}	
+}
+.nav__btn--next,
+.nav__btn--prev {
+	&::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		display: block;
+		width: 30px;
+		height: 30px;
+		border: 4px solid transparent;
+		border-left-color: #fff;
+		border-top-color: #fff;
+		transition: all .3s ease-in-out;
+	}
+}
+.nav__btn--next {
+	float: left;
+	&::after {
+		content: '';
+		left: 60%;
+		transform: translate(-50%, -50%) rotate(-45deg);
+	}	
+}
+.nav__btn--prev {
+	float: right;
+	&::after {
+		content: '';
+		right: 60%;
+		transform: translate(50%, -50%) rotate(135deg);
+	}	
+}
+.bullets {
+	position: absolute;
+    bottom: 5%;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.bullet {
+	display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    &:last-child {
+    	margin-right: 0;
+    }
+    &:hover,
+	&--active {
+		background-color: @accent;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
