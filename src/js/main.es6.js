@@ -61,6 +61,12 @@
 					navBtns.appendChild(prevBtn);
 					this.sliderBox.appendChild(navBtns);
 
+					this.sliderBox.addEventListener('transitionend', (event) => {
+						if (event.target.classList.contains('slide')) {
+							// console.log(event.target);
+						}
+					});
+
 					navBtns.addEventListener('click', (event) => {
 						if (event.target.classList.contains('nav__btn--next')) {
 							this.nextSlide(slidesArr, bulletsArr);
